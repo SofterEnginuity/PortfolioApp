@@ -74,21 +74,30 @@ public class Portfolio {
 
     }
 
+    public Valuable getleastValuable() {
+        if (!assets.isEmpty()) {
+            return null;
+        }
+        Valuable leastValuableAsset = assets.get(0);
+        double lowestValue = leastValuableAsset.getValue();
 
+        for (Valuable asset : assets) {
+            double assetValue = asset.getValue();
+
+            if (assetValue < lowestValue) {
+                lowestValue = assetValue;
+                leastValuableAsset = asset;
+            }
+
+        }
+        return leastValuableAsset;
+
+    }
 }
-// Valuable mostValuableAsset
-//
-// }
-//        }
-//            return null;
-////            }
-//
-//
 
 
 
-//
-//    }
+
 //    public void getLeastValuable(Valuable) {
 //
 //
